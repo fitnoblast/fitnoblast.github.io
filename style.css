@@ -267,19 +267,23 @@ box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 .amazon-india{
-
 background:linear-gradient(135deg,#ff9900,#ffb84d);
+color:#111 !important;
+font-weight:700;
+}
 
-color:#111;
-
+.amazon-india:hover{
+background:linear-gradient(135deg,#ffb000,#ffc95d);
 }
 
 .amazon-usa{
+background:linear-gradient(135deg,#146eb4,#2f86ff);
+color:#ffffff !important;
+font-weight:700;
+}
 
-background:linear-gradient(135deg,#146eb4,#48a4ff);
-
-color:#fff;
-
+.amazon-usa:hover{
+background:linear-gradient(135deg,#1b7dd8,#4ca1ff);
 }
 
 .youtube{
