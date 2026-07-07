@@ -1,155 +1,203 @@
-/* ==========================================
-   FITNOBLAST LANDING PAGE
-   Version 1.0
-========================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-
---primary:#22c55e;
---primary-dark:#16a34a;
-
---secondary:#4ade80;
-
---bg:#08111d;
-
---card:rgba(255,255,255,.06);
-
---border:rgba(255,255,255,.08);
-
---text:#ffffff;
-
---muted:#c8d0d8;
-
---shadow:0 20px 50px rgba(0,0,0,.35);
-
-}
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+:root{
+
+--bg:#07131f;
+--bg2:#0d2238;
+--card:rgba(255,255,255,.08);
+--border:rgba(255,255,255,.12);
+
+--white:#ffffff;
+--text:#d8dee9;
+--muted:#9fb3c8;
+
+--green:#19d37d;
+--green2:#0fbf6b;
+
+--blue:#4da3ff;
+
+--shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
 html{
+
 scroll-behavior:smooth;
+
 }
 
 body{
 
 font-family:'Poppins',sans-serif;
 
-background:linear-gradient(135deg,#071019,#0b1624,#111d2d);
+background:linear-gradient(135deg,#07131f,#102947,#07131f);
 
-color:var(--text);
+color:var(--white);
 
 min-height:100vh;
 
 overflow-x:hidden;
 
+position:relative;
+
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
-
-.background{
+.bg{
 
 position:fixed;
 
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-z-index:-2;
+inset:0;
 
 background:
-radial-gradient(circle at top left,#22c55e33,transparent 35%),
-radial-gradient(circle at bottom right,#0ea5e933,transparent 35%),
-linear-gradient(135deg,#08111d,#111827);
+
+radial-gradient(circle at 20% 20%,rgba(25,211,125,.18),transparent 35%),
+
+radial-gradient(circle at 80% 70%,rgba(77,163,255,.18),transparent 35%),
+
+radial-gradient(circle at 50% 100%,rgba(255,255,255,.05),transparent 40%);
+
+z-index:-1;
+
+animation:bgmove 15s linear infinite alternate;
+
+}
+
+@keyframes bgmove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-40px);
+
+}
 
 }
 
 .container{
 
-max-width:900px;
+width:min(1100px,92%);
 
 margin:auto;
 
-padding:60px 20px;
+padding:60px 0;
 
 }
 
-.hero{
+header{
 
 text-align:center;
 
 margin-bottom:45px;
 
+animation:fade 1s ease;
+
 }
 
 .logo{
 
-width:120px;
+width:150px;
 
-height:120px;
-
-margin:auto;
+height:150px;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.08);
+object-fit:cover;
 
-display:flex;
+background:#fff;
 
-align-items:center;
-
-justify-content:center;
-
-backdrop-filter:blur(15px);
-
-border:1px solid var(--border);
+padding:8px;
 
 box-shadow:var(--shadow);
 
 margin-bottom:25px;
 
-overflow:hidden;
+transition:.4s;
 
 }
 
-.logo img{
+.logo:hover{
 
-width:100%;
-height:100%;
-object-fit:cover;
+transform:scale(1.06) rotate(3deg);
 
 }
 
-.hero h1{
+header h1{
 
-font-size:3rem;
+font-size:clamp(2.4rem,5vw,4rem);
 
 font-weight:800;
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
-.hero p{
-
-color:var(--muted);
+header p{
 
 font-size:1.05rem;
 
+color:var(--muted);
+
 line-height:1.8;
 
-max-width:650px;
+max-width:700px;
 
 margin:auto;
+
+}
+
+.card{
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:28px;
+
+padding:35px;
+
+margin-top:30px;
+
+box-shadow:var(--shadow);
+
+animation:fadeUp .8s ease;
+
+}
+
+.card h2{
+
+font-size:1.8rem;
+
+margin-bottom:12px;
+
+}
+
+.card p{
+
+color:var(--text);
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+}
+
+.buttons{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:20px;
 
 }
